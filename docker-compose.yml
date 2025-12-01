@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  waha:
+    image: devlikeapro/whatsapp-http-api:latest
+    container_name: grainly-waha
+    restart: always
+    environment:
+      - WAHA_HTTP_API_PORT=3000
+      - WAHA_LOG_LEVEL=info
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./sessions:/app/sessions
